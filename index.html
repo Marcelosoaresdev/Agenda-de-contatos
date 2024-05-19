@@ -24,7 +24,7 @@
             </th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="tbody">
           <tr>
             <!-- Cria linhas -->
             <td>---</td>
@@ -39,13 +39,15 @@
       <form id="form">
         <label for="contact">
           Contato:
-          <input type="text" placeholder="Nome de contato" name="" id="contact" />
+          <input type="text" placeholder="Nome de contato" id="contact" required />
         </label>
         <label for="num">
           Telefone:
-          <input type="number" placeholder="(xx) xxxxx-xxxx" name="" id="num" />
+          <input type="text" placeholder="(xx) xxxxx-xxxx" id="num" maxlength="11" pattern="\d{11}" required />
         </label>
+        <button type="submit">Cadastrar</button>
       </form>
     </div>
   </body>
+  <script src="main.js"></script>
 </html>
