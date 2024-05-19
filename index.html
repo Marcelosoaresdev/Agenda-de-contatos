@@ -43,27 +43,35 @@
         </tbody>
       </table>
       <form id="form">
-        <label for="contact">
-          Contato:
-          <input
-            type="text"
-            placeholder="Nome de contato"
-            id="contact"
-            required
-          />
-        </label>
-        <label for="num">
-          Telefone:
-          <input
-            type="text"
-            placeholder="(xx) xxxxx-xxxx"
-            id="num"
-            maxlength="11"
-            required
-            pattern="\d{11}"
-          />
-        </label>
-        <button type="submit">Cadastrar</button>
+        <div id="profile">
+          <img src="/profile.png" alt="" />
+          <label for="contact">
+            Contato:
+            <input
+              type="text"
+              placeholder="Nome de contato"
+              id="contact"
+              required
+            />
+          </label>
+        </div>
+        <div id="phone">
+          <img src="/phone1.png" alt="" srcset="" />
+          <label for="num">
+            Telefone:
+            <input
+              type="text"
+              placeholder="(xx) xxxxx-xxxx"
+              id="num"
+              maxlength="11"
+              required
+              pattern="\d{11}"
+            />
+          </label>
+        </div>
+        <div id="btn">
+          <button type="submit">Cadastrar</button>
+        </div>
       </form>
     </div>
   </body>

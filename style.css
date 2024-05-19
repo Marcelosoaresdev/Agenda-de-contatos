@@ -59,6 +59,7 @@ input:focus {
 }
 
 button {
+  width: 100%;
   padding: 10px;
   margin: 5px;
   font-weight: bold;
@@ -71,4 +72,25 @@ button {
 
 button:hover {
   background-color: rgb(2, 207, 95);
+}
+
+#btn {
+  display: flex;
+  align-items: center;
+}
+
+#profile {
+  display: flex;
+  align-items: center;
+}
+
+#phone {
+  display: flex;
+  align-items: center;
+}
+
+
+img {
+  height: 20px;
+  margin: 0;
 }
