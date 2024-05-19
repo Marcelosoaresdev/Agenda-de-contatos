@@ -11,11 +11,15 @@ form.addEventListener("submit", function (e) {
   const addNum = document.getElementById("num");
 
   if (contatos.includes(addContact.value) && telefones.includes(addNum.value)) {
+    /* Se contatos já incluir o que foi inserido em addContatos.value... */
     alert("Você já adicinou esse contato!");
   } else if (telefones.includes(addNum.value)) {
+    /* Se telefones já incluir o que foi inserido pelo usuario em addNum.value... */
     alert("Você tem um contato existente com esse número!");
   } else if (addNum.value.length !== 11) {
     alert("O telefone deve conter exatamente 11 dígitos");
+    addContact.value = ""; // Reseta os campos após ação
+    addNum.value = ""; // Reseta os campos após ação
   } else {
     contatos.push(addContact.value);
     telefones.push(addNum.value);
