@@ -1,0 +1,51 @@
+/* Reseta o navegador, tirando todas as bordas e margens */
+* {
+  margin: 10px;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #fff;
+  height: 100vh; /* Para garantir que o body ocupe toda a altura da tela */
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Alinha os itens do header no centro */
+  max-width: 960px;
+  margin-bottom: 40px;
+}
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+table {
+  border-collapse: collapse; /* Para remover espaços entre as bordas das células */
+  width: 98%;
+}
+
+th,
+td {
+  padding: 10px; /* Adiciona preenchimento nas células da tabela */
+  text-align: center; /* Alinha o texto à esquerda */
+}
+
+form {
+  display: flex; /* Foi usado o Display flex para deixar os inputs do mesmo tamanho */
+  width: 100%;
+  max-width: 960px;
+  margin: 0;
+  justify-content: space-around;
+}
+
+input {
+  padding: 10px;
+  max-width: 960px;
+  margin: 0 auto;
+}
