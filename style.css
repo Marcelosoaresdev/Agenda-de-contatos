@@ -34,6 +34,7 @@ th,
 td {
   padding: 10px; /* Adiciona preenchimento nas células da tabela */
   text-align: center; /* Alinha o texto à esquerda */
+  border: solid #a89393e5 1px;
 }
 
 form {
@@ -48,4 +49,17 @@ input {
   padding: 10px;
   max-width: 960px;
   margin: 0 auto;
+  border-radius: 10px;
+  border: solid #a89393e5 1px;
+}
+
+button {
+  padding: 10px;
+  margin: 5px;
+  font-weight: bold;
+  color: #000000;
+  background-color: rgb(53, 185, 124);
+  border: solid #524a4ae5 2px;
+  border-radius: 10px;
+  cursor: pointer;
 }
