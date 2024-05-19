@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Agenda de Contatos</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poetsen+One&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container">
@@ -39,11 +45,22 @@
       <form id="form">
         <label for="contact">
           Contato:
-          <input type="text" placeholder="Nome de contato" id="contact" required />
+          <input
+            type="text"
+            placeholder="Nome de contato"
+            id="contact"
+            required
+          />
         </label>
         <label for="num">
           Telefone:
-          <input type="text" placeholder="(xx) xxxxx-xxxx" id="num" maxlength="11" required />
+          <input
+            type="text"
+            placeholder="(xx) xxxxx-xxxx"
+            id="num"
+            maxlength="11"
+            required
+          />
         </label>
         <button type="submit">Cadastrar</button>
       </form>
