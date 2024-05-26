@@ -1,42 +1,52 @@
-const form = document.getElementById("form");
-const contatos = [];
-const telefones = [];
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.getElementById("form");
+  const contatos = [];
+  const telefones = [];
+  const numInput = document.getElementById("num");
 
-let linhas = "";
+  let linhas = "";
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault(); // Remove o comportamento de atualizar a página ao clicar em submit
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); 
 
-  const addContact = document.getElementById("contact");
-  const addNum = document.getElementById("num");
+    const addContact = document.getElementById("contact");
+    const addNum = document.getElementById("num");
 
-  if (contatos.includes(addContact.value) && telefones.includes(addNum.value)) {
-    // Se contatos já incluir o que foi inserido em addContact.value...
-    alert("Você já adicionou esse contato!");
-  } else if (telefones.includes(addNum.value)) {
-    // Se telefones já incluir o que foi inserido pelo usuário em addNum.value...
-    alert("Você tem um contato existente com esse número!");
-    addContact.value = "";
-    addNum.value = "";
-  } else {
-    contatos.push(addContact.value);
-    telefones.push(addNum.value);
+    if (telefones.includes(addNum.value)) {
+      alert("Você tem um contato existente com esse número!");
+      limparCampos(addContact, addNum);
+    } else {
+      adicionarContato(addContact.value, addNum.value);
+      limparCampos(addContact, addNum);
+      atualizaTabela();
+    }
+  });
 
-    let linha = "<tr>";
-    linha += `<td>${addContact.value}</td>`;
-    linha += `<td>${addNum.value}</td>`;
-    linha += "</tr>";
-    linhas += linha;
+  numInput.addEventListener("input", formatarNumero);
 
-    // Limpa os campos de input após adicionar
-    addContact.value = "";
-    addNum.value = "";
+  function adicionarContato(nome, telefone) {
+    contatos.push(nome);
+    telefones.push(telefone);
+    linhas += `<tr><td>${nome}</td><td>${telefone}</td></tr>`;
+  }
 
-    atualizaTabela();
+  function formatarNumero() {
+    let formattedNumber = this.value.replace(/\D/g, "");
+    formattedNumber = formattedNumber.replace(/^0+/, '');
+    const match = formattedNumber.match(/^(\d{0,2})(\d{0,5})(\d{0,4})$/);
+    if (match) {
+      formattedNumber = !match[2] ? match[1] : `(${match[1]}) ${match[2]}` + (match[3] ? `-${match[3]}` : '');
+    }
+    this.value = formattedNumber;
+  }
+
+  function atualizaTabela() {
+    const corpoTabela = document.querySelector(".tbody");
+    corpoTabela.innerHTML = linhas;
+  }
+
+  function limparCampos(input1, input2) {
+    input1.value = "";
+    input2.value = "";
   }
 });
-
-function atualizaTabela() {
-  const corpoTabela = document.querySelector(".tbody");
-  corpoTabela.innerHTML = linhas; // Atualiza a tabela com as novas linhas
-}
