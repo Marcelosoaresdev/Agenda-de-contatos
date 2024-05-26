@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
       const telefoneSemFormatacao = addNum.value.replace(/\D/g, "");
       if (telefoneSemFormatacao.length !== 11) {
         alert("O número de telefone deve ter 11 dígitos.");
-        return; // Impede o envio do formulário se o número de telefone não tiver 15 caracteres
+        return; // Impede o envio do formulário se o número de telefone não tiver 11 caracteres
       }
 
       adicionarContato(addContact.value, addNum.value);
