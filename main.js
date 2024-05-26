@@ -16,6 +16,13 @@ document.addEventListener("DOMContentLoaded", function() {
       alert("Você tem um contato existente com esse número!");
       limparCampos(addContact, addNum);
     } else {
+      // Verifica se o número de telefone tem exatamente 15 caracteres
+      const telefoneSemFormatacao = addNum.value.replace(/\D/g, "");
+      if (telefoneSemFormatacao.length !== 11) {
+        alert("O número de telefone deve ter 11 dígitos.");
+        return; // Impede o envio do formulário se o número de telefone não tiver 15 caracteres
+      }
+
       adicionarContato(addContact.value, addNum.value);
       limparCampos(addContact, addNum);
       atualizaTabela();
