@@ -11,10 +11,10 @@ form.addEventListener("submit", function (e) {
   const addNum = document.getElementById("num");
 
   if (contatos.includes(addContact.value) && telefones.includes(addNum.value)) {
-    /* Se contatos já incluir o que foi inserido em addContatos.value... */
-    alert("Você já adicinou esse contato!");
+    // Se contatos já incluir o que foi inserido em addContact.value...
+    alert("Você já adicionou esse contato!");
   } else if (telefones.includes(addNum.value)) {
-    /* Se telefones já incluir o que foi inserido pelo usuario em addNum.value... */
+    // Se telefones já incluir o que foi inserido pelo usuário em addNum.value...
     alert("Você tem um contato existente com esse número!");
     addContact.value = "";
     addNum.value = "";

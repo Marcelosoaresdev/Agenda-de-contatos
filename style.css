@@ -1,14 +1,22 @@
 /* Reseta o navegador, tirando todas as bordas e margens */
 * {
-  margin: 10px;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Oswald", sans-serif;
 }
 
 body {
-  background-color: #fff;
+  background-color: #dfdedea9;
   height: 100vh; /* Para garantir que o body ocupe toda a altura da tela */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 64px;
 }
 
 header {
@@ -27,30 +35,51 @@ header {
 
 table {
   border-collapse: collapse; /* Para remover espaços entre as bordas das células */
-  width: 98%;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 th,
 td {
   padding: 10px; /* Adiciona preenchimento nas células da tabela */
-  text-align: center; /* Alinha o texto à esquerda */
+  text-align: center; /* Alinha o texto ao centro */
   border: solid #a89393e5 1px;
+  font-size: 25px;
+  font-family: "Times New Roman", Times, serif;
+  width: 50%; /* Define uma largura fixa para th e td */
 }
 
 form {
   display: flex; /* Foi usado o Display flex para deixar os inputs do mesmo tamanho */
   width: 100%;
   max-width: 960px;
-  margin: 0;
-  justify-content: space-around;
+  margin: 0 auto 20px;
+  justify-content: space-between;
+}
+
+#profile,
+#phone {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-family: "Times New Roman", Times, serif;
+  letter-spacing: 1px;
 }
 
 input {
-  padding: 10px;
-  max-width: 960px;
-  margin: 0 auto;
-  border-radius: 10px;
+  font-family: "Times New Roman", Times, serif;
+  padding: 7px;
+  margin-left: 15px;
+  border-radius: 0.5rem;
   border: solid #a89393e5 2px;
+  font-size: 1.5rem;
+  flex-grow: 1;
 }
 
 input:focus {
@@ -60,37 +89,28 @@ input:focus {
 
 button {
   width: 100%;
-  padding: 10px;
-  margin: 5px;
+  padding: 9px 30px;
+  letter-spacing: 0.5px;
   font-weight: bold;
   color: #000000;
-  background-color: rgb(53, 185, 124);
-  border: solid #524a4ae5 2px;
-  border-radius: 10px;
+  background-color: rgba(10, 194, 108, 0.76);
+  border: none;
+  border-radius: 0.5rem;
   cursor: pointer;
+  font-size: 1.5rem;
 }
 
 button:hover {
-  background-color: rgb(2, 207, 95);
+  background-color: rgba(7, 143, 79, 0.76);
 }
 
 #btn {
   display: flex;
-  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
 }
-
-#profile {
-  display: flex;
-  align-items: center;
-}
-
-#phone {
-  display: flex;
-  align-items: center;
-}
-
 
 img {
-  height: 20px;
-  margin: 0;
+  height: 35px;
+  margin-right: 10px;
 }
